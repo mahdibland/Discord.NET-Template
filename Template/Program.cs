@@ -45,11 +45,9 @@ namespace Template
                 })
                 .UseCommandService((context, config) =>
                 {
-                    config = new CommandServiceConfig()
-                    {
-                        CaseSensitiveCommands = false,
-                        LogLevel = LogSeverity.Verbose
-                    };
+                    config.CaseSensitiveCommands = false;
+                    config.LogLevel = LogSeverity.Verbose;
+                    config.DefaultRunMode = RunMode.Sync;
                 })
                 .ConfigureServices((context, services) =>
                 {
